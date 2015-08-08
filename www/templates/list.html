@@ -1,0 +1,18 @@
+<ion-view view-title="Notes">
+	<ion-nav-buttons side="primary">
+      <a class="button button-icon ion-ios-plus-empty" href="#/add">
+        
+      </a>
+    </ion-nav-buttons>
+	<ion-content ng-controller="ListCtrl">
+		<ion-list>
+		  <ion-item class='item-remove-animate' href="#/edit/{{note.id}}"  ng-repeat="note in notes | orderBy : -id">
+		    <h2>{{note.title}}</h2>
+		    <p>{{note.description}} <span style="float:right" am-time-ago="{{note.id}}"></span></p>
+		    <ion-option-button ng-click="remove(note.id)" class="button-assertive">Delete</ion-option-button>
+		  </ion-item>
+		</ion-list>
+
+	</ion-content>
+  
+</ion-view>
